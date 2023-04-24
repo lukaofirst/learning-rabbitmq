@@ -2,6 +2,7 @@ using MediatR;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BankingDbContext>(opt =>
 {
 	var connStr = builder.Configuration.GetConnectionString("BankingDbConn");
-	Console.WriteLine(connStr);
 	opt.UseSqlServer(connStr);
 });
 builder.Services.RegisterServices();
@@ -23,12 +23,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(x =>
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
-}
+	x.SwaggerEndpoint("/swagger/v1/swagger.json", "Example App V1");
+	x.RoutePrefix = string.Empty;
+});
 
 app.UseHttpsRedirection();
 
