@@ -1,3 +1,9 @@
+// Banking's microservice
 dotnet ef migrations add FirstMigration -p Microservices/Banking/Data/MicroRabbit.Banking.Data/MicroRabbit.Banking.Data.csproj -s Microservices/Banking/Api/MicroRabbit.Banking.Api/MicroRabbit.Banking.Api.csproj
 
 dotnet ef database update -p Microservices/Banking/Data/MicroRabbit.Banking.Data/MicroRabbit.Banking.Data.csproj -s Microservices/Banking/Api/MicroRabbit.Banking.Api/MicroRabbit.Banking.Api.csproj
+
+// Transfer's microservice
+dotnet ef migrations add FirstMigration -p Microservices/Transfer/Data/MicroRabbit.Transfer.Data/MicroRabbit.Transfer.Data.csproj -s Microservices/Transfer/Api/MicroRabbit.Transfer.Api/MicroRabbit.Transfer.Api.csproj
+
+dotnet ef database update -p Microservices/Transfer/Data/MicroRabbit.Transfer.Data/MicroRabbit.Transfer.Data.csproj -s Microservices/Transfer/Api/MicroRabbit.Transfer.Api/MicroRabbit.Transfer.Api.csproj
