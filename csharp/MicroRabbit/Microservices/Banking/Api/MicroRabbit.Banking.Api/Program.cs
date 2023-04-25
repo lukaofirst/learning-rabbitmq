@@ -2,7 +2,6 @@ using MediatR;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +11,7 @@ builder.Services.AddDbContext<BankingDbContext>(opt =>
 	var connStr = builder.Configuration.GetConnectionString("BankingDbConn");
 	opt.UseSqlServer(connStr);
 });
-builder.Services.RegisterServices();
+builder.Services.RegisterBankingServices();
 
 builder.Services.AddMediatR(typeof(Program));
 
