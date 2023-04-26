@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../../../Infra.IoC/MicroRabbit.Infra.IoC/MicroRabbit.Infra.IoC.csproj" />
-    <ProjectReference Include="../../Data/MicroRabbit.Transfer.Data/MicroRabbit.Banking.Data.csproj" />
+    <ProjectReference Include="../../Data/MicroRabbit.Transfer.Data/MicroRabbit.Transfer.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
