@@ -75,8 +75,8 @@ namespace MicroRabbit.Infra.Bus
 			var factory = new ConnectionFactory();
 			factory.Uri = new Uri("amqp://guest:guest@localhost:5672");
 			factory.DispatchConsumersAsync = true;
-			var connection = factory.CreateConnection();
-			var channel = connection.CreateModel();
+			using var connection = factory.CreateConnection();
+			using var channel = connection.CreateModel();
 
 			var eventName = typeof(T).Name;
 
