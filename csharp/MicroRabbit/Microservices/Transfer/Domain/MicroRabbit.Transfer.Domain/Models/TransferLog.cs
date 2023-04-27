@@ -5,6 +5,6 @@ namespace MicroRabbit.Transfer.Domain.Models
 		public int Id { get; set; }
 		public int FromAccount { get; set; }
 		public int ToAccount { get; set; }
-		public int TransferAmount { get; set; }
+		public double TransferAmount { get; set; }
 	}
 }
